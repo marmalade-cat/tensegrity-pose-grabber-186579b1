@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TensegrityPoseGrabber Prototype</title>
+<style>
+body{font-family:system-ui,Arial;margin:18px;color:#222}
+textarea{width:100%;height:120px}
+input[type=file]{margin-bottom:8px}
+pre{background:#f6f6f6;padding:8px;border-radius:4px}
+small{color:#666}
+.plot{width:100%;height:220px;border:1px solid #ddd;margin-top:8px}
+</style>
+</head>
+<body>
+<h2>TensegrityPoseGrabber — prototype</h2>
+<p>Load a local CSV or JSON pose file (drag or choose), or paste text and click Parse.</p>
+<input type=file id=fileinp /> <button id=clear>Clear</button>
+<div>
+<textarea id=txt placeholder="Or paste file content here..."></textarea>
+</div>
+<button id=parse>Parse</button>
+<button id=downloadCsv disabled>Download Normalized CSV</button>
+<button id=downloadJson disabled>Download Normalized JSON</button>
+<h3>Report</h3>
+<pre id=report>Nothing parsed yet.</pre>
+<h3>Normalized Preview (first 50 rows)</h3>
+<pre id=preview></pre>
+<h3>Plot Module Orientation (Euler yaw,pitch,roll)</h3>
+Module ID: <input id=moduleId style="width:80px" /> <button id=plotbtn>Plot</button>
+<canvas id=plot
